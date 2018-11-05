@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        #chessboard {
+            width:100%;
+            height:100%;
+            display: grid;
+            position: relative;
+            
+            grid-template-columns: repeat(8, 90px);
+            grid-auto-rows: 90px;
+        }
+
+        .game-over {
+            background-color: brown;
+        }
+
+        .square {
+            position: relative;
+        }
+        .white {
+            background-color: white;
+        }
+        .black {
+            background-color: lightblue;
+        }
+        .square-number {position:absolute;right:0;}
+        .square-letter {position: absolute;bottom: 0;}
+
+        .piece {
+            position: absolute; 
+            margin: 0px; 
+            padding: 0px; 
+            display: block; 
+            overflow: hidden; 
+            opacity: 1; 
+            z-index: 5; 
+            top: 0px; 
+            left: 0px;
+            right: 0px; 
+            bottom: 0px;
+            cursor: pointer;
+            cursor: hand;
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        .disable-select {
+            -webkit-user-select: none;  
+            -moz-user-select: none;    
+            -ms-user-select: none;      
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chessboard">
+    </div>
+    <div>
+        <button onclick="flipBoard()">flip</button>
+        <button id="expand" onclick="increaseBoardSize()">
+            <>
+        </button>
+        <input type="text" id="fen" style="width: 400px;"/>
+    </div>
+    <script src="./dist/bundle.js"></script>
+</body>
+
+</html>
